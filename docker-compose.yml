@@ -1,0 +1,12 @@
+
+version: '2'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: game-test-task
+    ports:
+      - 8080:80
+    volumes:
+      - .:/var/www/html
