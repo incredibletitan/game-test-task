@@ -15,16 +15,29 @@ use libs\landscapes\Water;
  */
 class Plane extends Unit
 {
-    public function moveForward(Landscape $landscape)
+    /**
+     * @inheritdoc
+     */
+    public function moveForward(Landscape $landscape): bool
     {
-        echo __CLASS__ . 'is moving';
+        //there will be moving logic
+        echo __CLASS__ . " flying to " . get_class($landscape);
+        return true;
     }
 
-    public function fightEnemy(Unit $unit)
+    /**
+     * @inheritdoc
+     */
+    public function fightEnemy(Unit $unit): bool
     {
+        //there will be fighting logic
         echo get_class($unit) . 'has destroyed';
+        return true;
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function getAllowedEnemies()
     {
         return [
@@ -34,6 +47,9 @@ class Plane extends Unit
         ];
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function getSupportedLandscapes()
     {
         return [
