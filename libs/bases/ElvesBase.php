@@ -3,7 +3,6 @@
 namespace libs\bases;
 
 use libs\landscapes\Plain;
-use libs\maps\Map;
 
 /**
  * Class ElvesBase
@@ -12,4 +11,15 @@ use libs\maps\Map;
  */
 class ElvesBase extends Base
 {
+    /**
+     * @inheritdoc
+     *
+     * @return array
+     */
+    protected function getSupportedLandscapes()
+    {
+        return [
+            Plain::class
+        ];
+    }
 }

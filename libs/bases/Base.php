@@ -2,28 +2,20 @@
 
 namespace libs\bases;
 
-use libs\landscapes\Plain;
-use libs\maps\Map;
+use libs\landscapes\Landscape;
 
 abstract class Base
 {
-    protected $units = [];
-
-    public function place(Map $map)
+    public function place(Landscape $landscape)
     {
-        $landscapes = $map->getLandscapes();
-        $countOfLandscapes = count($landscapes);
-
-        for ($i = 0; $i < $countOfLandscapes; $i++) {
-            if (!($landscapes[$i] instanceof Plain)) {
-                continue;
-            }
-            return $i;
+        if (!in_array(get_class($landscape), $this->getSupportedLandscapes())) {
+            throw new \Exception("Can't place base on that type of Landscape");
         }
+        echo __CLASS__ . " successfully placed on " . get_class($landscape);
     }
 
-    public function getUnits()
-    {
-        return $this->units;
-    }
+    /**
+     * @return array - List of supported landscapes
+     */
+    abstract protected function getSupportedLandscapes();
 }

@@ -3,14 +3,17 @@
 namespace libs\units;
 
 use libs\landscapes\Landscape;
+use libs\landscapes\Mountains;
 use libs\landscapes\Plain;
+use libs\landscapes\Swamp;
+use libs\landscapes\Water;
 
 /**
- * Class Machinery
+ * Class Plane
  *
  * @author Yuriy Stos
  */
-class Machinery extends Unit
+class Plane extends Unit
 {
     public function moveForward(Landscape $landscape)
     {
@@ -26,14 +29,18 @@ class Machinery extends Unit
     {
         return [
             Human::class,
-            Machinery::class
+            Machinery::class,
+            Plane::class
         ];
     }
 
     protected function getSupportedLandscapes()
     {
         return [
-            Plain::class
+            Plain::class,
+            Mountains::class,
+            Water::class,
+            Swamp::class
         ];
     }
 }
