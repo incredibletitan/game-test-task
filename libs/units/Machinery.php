@@ -4,6 +4,7 @@ namespace libs\units;
 
 use libs\landscapes\Landscape;
 use libs\landscapes\Plain;
+use libs\landscapes\Swamp;
 
 /**
  * Class Machinery
@@ -49,7 +50,8 @@ class Machinery extends Unit
     protected function getSupportedLandscapes()
     {
         return [
-            Plain::class
+            Plain::class,
+            Swamp::class
         ];
     }
 }

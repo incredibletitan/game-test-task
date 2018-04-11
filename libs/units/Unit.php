@@ -22,7 +22,7 @@ abstract class Unit
     public function move(Landscape $landscape): bool
     {
         if (!in_array(get_class($landscape), $this->getSupportedLandscapes())) {
-            throw new UnsupportedLandscapeException("Can't fight with this type of enemy");
+            throw new UnsupportedLandscapeException("Can't move to this type of landscape");
         }
         return $this->moveForward($landscape);
     }
