@@ -13,5 +13,5 @@ To install the project please follow this steps
 ## Information
 
 - All interaction process between units, landscapes and bases is depicted in index.php file
-- I didn't develop neither real unit fighting algorythm, neither units moving functionality
+- I didn't develop neither real unit fighting algorithm, nor units moving functionality
 - The purpose was to show how objects are interacting according to the task requirements and it's restrictions
