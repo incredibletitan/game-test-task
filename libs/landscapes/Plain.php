@@ -9,8 +9,11 @@ namespace libs\landscapes;
  */
 class Plain implements Landscape
 {
+    /**
+     * @inheritdoc
+     */
     public function getSquare()
     {
-        // TODO: Implement getSquare() method.
+        return rand(100, 200);
     }
 }

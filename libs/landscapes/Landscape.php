@@ -7,5 +7,10 @@ namespace libs\landscapes;
  */
 interface Landscape
 {
+    /**
+     * Returns square of specific landscape
+     *
+     * @return mixed
+     */
     public function getSquare();
 }

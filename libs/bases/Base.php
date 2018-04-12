@@ -4,6 +4,7 @@ namespace libs\bases;
 
 use libs\landscapes\Landscape;
 use libs\landscapes\UnsupportedLandscapeException;
+use libs\builders\UnitsBuilder;
 
 abstract class Base
 {
@@ -20,14 +21,21 @@ abstract class Base
         if (!in_array(get_class($landscape), $this->getSupportedLandscapes())) {
             throw new UnsupportedLandscapeException("Can't place base on that type of Landscape");
         }
-        //Here will be base placing logic
-        echo __CLASS__ . " successfully placed on " . get_class($landscape);
-
+        //There should placing logic, but method always returns true
         return true;
     }
 
     /**
+     * Returns the list of supported landscapes
+     *
      * @return array - List of supported landscapes
      */
     abstract protected function getSupportedLandscapes();
+
+    /**
+     * Returns UnitsBuilder
+     *
+     * @return UnitsBuilder
+     */
+    abstract public function getUnitsBuilder();
 }

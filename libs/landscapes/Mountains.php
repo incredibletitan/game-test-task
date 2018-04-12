@@ -9,8 +9,11 @@ namespace libs\landscapes;
  */
 class Mountains implements Landscape
 {
+    /**
+     * @inheritdoc
+     */
     public function getSquare()
     {
-        return rand(100, 150);
+        return rand(100, 200);
     }
 }

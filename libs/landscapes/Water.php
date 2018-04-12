@@ -9,8 +9,11 @@ namespace libs\landscapes;
  */
 class Water implements Landscape
 {
+    /**
+     * @inheritdoc
+     */
     public function getSquare()
     {
-       return 100;
+        return rand(100, 200);
     }
 }

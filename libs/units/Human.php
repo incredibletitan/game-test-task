@@ -19,8 +19,7 @@ class Human extends Unit
      */
     public function moveForward(Landscape $landscape): bool
     {
-        //there will be moving logic
-        echo __CLASS__ . " moved to " . get_class($landscape);
+        //Here should be moving logic, but method returns true
         return true;
     }
 
@@ -29,8 +28,7 @@ class Human extends Unit
      */
     public function fightEnemy(Unit $unit): bool
     {
-        //there will be fighting logic
-        echo get_class($unit) . 'has destroyed';
+        //Here should be fighting logic, but method returns true
         return true;
     }
 
