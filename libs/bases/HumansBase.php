@@ -2,7 +2,7 @@
 
 namespace libs\bases;
 
-use libs\maps\Map;
+use libs\landscapes\Plain;
 
 /**
  * Class HumansBase
@@ -11,4 +11,15 @@ use libs\maps\Map;
  */
 class HumansBase extends Base
 {
+    /**
+     * @inheritdoc
+     *
+     * @return array
+     */
+    protected function getSupportedLandscapes()
+    {
+        return [
+            Plain::class
+        ];
+    }
 }
