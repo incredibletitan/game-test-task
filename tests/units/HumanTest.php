@@ -7,6 +7,7 @@ use libs\landscapes\Plain;
 use libs\landscapes\Swamp;
 use libs\landscapes\Water;
 use libs\units\Human;
+use libs\units\Machinery;
 use libs\units\Plane;
 use PHPUnit\Framework\TestCase;
 
@@ -26,6 +27,16 @@ class HumanTest extends TestCase
         $this->assertTrue($human->move(new Water()));
         $this->assertTrue($human->move(new Mountains()));
         $this->assertTrue($human->move(new Plain()));
+    }
+
+    /**
+     * @covers Human::move()
+     */
+    public function testFight()
+    {
+        $human = new Human();
+        $this->assertTrue($human->fight(new Human()));
+        $this->assertTrue($human->fight(new Machinery()));
     }
 
     /**

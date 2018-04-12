@@ -6,6 +6,7 @@ use libs\landscapes\Mountains;
 use libs\landscapes\Swamp;
 use libs\units\Machinery;
 use libs\landscapes\Plain;
+use libs\units\Human;
 use libs\units\Plane;
 use PHPUnit\Framework\TestCase;
 
@@ -16,6 +17,16 @@ use PHPUnit\Framework\TestCase;
  */
 class MachineryTest extends TestCase
 {
+    /**
+     * @covers Human::move()
+     */
+    public function testFight()
+    {
+        $human = new Machinery();
+        $this->assertTrue($human->fight(new Human()));
+        $this->assertTrue($human->fight(new Machinery()));
+    }
+
     /**
      * @covers Human::move()
      */
